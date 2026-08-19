@@ -1,0 +1,229 @@
+{
+  "sample": {
+    "grid_label": "AD184_2",
+    "description": "U2OS cells incubated with CdSe/ZnS QDs",
+    "preparation_date": "2026-06-02"
+  },
+  "microscope_name": {
+    "selected": "Krios",
+    "data": {}
+  },
+  "microscope_mode": {
+    "selected": "4D-STEM",
+    "data": {
+      "4D-STEM": {
+        "main_scan": {
+          "scan_mode": {
+            "selected": "raster_scan",
+            "data": {
+              "raster_scan": {
+                "step_size_nm": 2.9,
+                "Nx": 1024,
+                "Ny": 1024,
+                "scan_time_s": 22.0,
+                "trigger_delay_us": 1.0
+              }
+            }
+          },
+          "beam": {
+            "energy_kv": 300.0,
+            "convergence_angle_mrad": 0.8,
+            "current_pA": 14.0,
+            "C2_aperture_um": 50.0,
+            "defocus_um": -13.125
+          },
+          "detectors": {
+            "first_detector": {
+              "selected": "ARINA",
+              "data": {
+                "ARINA": {
+                  "ARINA_camera_size": {
+                    "selected": "96x96",
+                    "data": {}
+                  },
+                  "ARINA_type": {
+                    "selected": "commercial",
+                    "data": {}
+                  },
+                  "ARINA_position": {
+                    "selected": "left_to_column",
+                    "data": {}
+                  }
+                }
+              }
+            },
+            "second_detector": {
+              "selected": "HAADF",
+              "data": {}
+            }
+          },
+          "camera_length_mm": 3400.0,
+          "discriminator": ""
+        },
+        "additional_scan": {
+			"1": {	
+			  "scan_mode": {
+				"selected": "raster_scan",
+				"data": {
+				  "raster_scan": {
+					"step_size_nm": 2.9,
+					"Nx": 1024,
+					"Ny": 1024,
+					"scan_time_s": 22.0,
+					"trigger_delay_us": 1.0
+				  }
+				}
+			  },
+			  "beam": {
+				"energy_kv": 300.0,
+				"convergence_angle_mrad": 0.8,
+				"current_pA": 14.0,
+				"defocus_um": 0.0,
+				"C2_aperture_um": 50.0
+			  },
+			  "detectors": {
+				"first_detector": {
+				  "selected": "ARINA",
+				  "data": {
+					"ARINA": {
+					  "ARINA_camera_size": {
+						"selected": "96x96",
+						"data": {}
+					  },
+					  "ARINA_type": {
+						"selected": "commercial",
+						"data": {}
+					  },
+					  "ARINA_position": {
+						"selected": "left_to_column",
+						"data": {}
+					  }
+					}
+				  }
+				},
+				"second_detector": {
+				  "selected": "HAADF",
+				  "data": {}
+				}
+			  },
+			  "camera_length_mm": 340.0,
+			  "discriminator": ""
+			}
+		}
+      }
+    }
+  },
+  "series_type": {
+    "selected": "single-axis_tilt_series",
+    "data": {
+      "single_tilt_settings": {
+        "selected": "dose_symmetric",
+        "data": {},
+        "dose_symmetric": {
+          "end_tilt_angle": 60.0,
+          "step_tilt_angle": 3.0,
+          "group_size": 3,
+          "negative_then_positive": true,
+        }
+      },
+      "single_tilt_series_settings": {
+        "selected": "arbitrary_angle_scheme",
+        "data": {}
+      }
+    }
+  },
+  "folder_name": "z:/shared/ArinaData/2026Aug10_AD184/",
+  "master_name": "KriosAD184_tomo12",
+  "acquisition_date": "2026-08-10",
+  "publication": "",
+  "tilt_angles_deg": [
+    0,
+    0,
+    -3,
+    -3,
+    -6,
+    -6,
+    -9,
+    -9,
+    3,
+    3,
+    6,
+    6,
+    9,
+    9,
+    -12,
+    -12,
+    -15,
+    -15,
+    -18,
+    -18,
+    12,
+    12,
+    15,
+    15,
+    18,
+    18,
+    -21,
+    -21,
+    -24,
+    -24,
+    -27,
+    -27,
+    21,
+    21,
+    24,
+    24,
+    27,
+    27,
+    -30,
+    -30,
+    -33,
+    -33,
+    -36,
+    -36,
+    30,
+    30,
+    33,
+    33,
+    36,
+    36,
+    -39,
+    -39,
+    -42,
+    -42,
+    -45,
+    -45,
+    39,
+    39,
+    42,
+    42,
+    45,
+    45,
+    -48,
+    -48,
+    -51,
+    -51,
+    -54,
+    -54,
+    48,
+    48,
+    51,
+    51,
+    54,
+    54,
+    -57,
+    -57,
+    -60,
+    -60,
+    57,
+    57,
+    60,
+    60
+  ],
+  "schema_name": "microscopy_metadata_master",
+  "schema_version": "1.0",
+  "number_of_additional_scans_per_tilt": 1,
+  "remark": "",
+  "angles_duplicated": true,
+  "angle_repetition_factor": 2
+}

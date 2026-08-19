@@ -1,0 +1,556 @@
+{
+  "schema_name": "microscopy_metadata_master",
+  "schema_version": "1.0",
+
+  "root": {
+    "type": "button",
+    "label": "Root metadata",
+    "children": [
+      "folder_name",
+      "master_name",
+      "sample",
+      "microscope_name",
+      "microscope_mode",
+      "series_type",
+	  "number_of_additional_scans_per_tilt",
+	  "acquisition_date",
+      "publication",
+	  "remark"
+    ]
+  },
+
+  "branches": {
+    "folder_name": {
+      "type": "string",
+      "label": "Folder name",
+      "default": ""
+    },
+
+    "master_name": {
+      "type": "string",
+      "label": "Master name",
+      "default": ""
+    },
+
+    "publication": {
+      "type": "string",
+      "label": "Publication",
+      "default": ""
+    },
+    "remark": {
+      "type": "string",
+      "label": "remark",
+      "default": ""
+    },
+
+    "sample": {
+      "type": "button",
+      "label": "Sample",
+      "children": [
+        "grid_label",
+        "description",
+        "preparation_date"
+      ]
+    },
+
+    "grid_label": {
+      "type": "string",
+      "label": "Grid label",
+      "default": ""
+    },
+
+    "description": {
+      "type": "string",
+      "label": "Description",
+      "default": ""
+    },
+
+    "preparation_date": {
+      "type": "string",
+      "label": "Preparation date",
+      "default": "",
+      "hint": "Recommended format: YYYY-MM-DD"
+    },
+
+    "acquisition_date": {
+      "type": "string",
+      "label": "Acquistion date",
+      "default": "",
+      "hint": "Recommended format: YYYY-MM-DD"
+    },
+
+    "microscope_name": {
+      "type": "dropdown",
+      "label": "Microscope name",
+      "choices": [
+        "F20",
+        "Krios",
+        "Arctica",
+		"Themis"
+      ],
+      "default": ""
+    },
+
+    "microscope_mode": {
+      "type": "dropdown",
+      "label": "Microscope mode",
+      "choices": [
+        "STEM",
+        "4D-STEM",
+        "EELS",
+        "TEM",
+		"ADX"
+      ],
+      "default": "",
+      "opens": {
+        "STEM": "STEM",
+        "4D-STEM": "4D-STEM",
+        "EELS": "EELS",
+        "TEM": null
+      }
+    },
+
+    "series_type": {
+      "type": "dropdown",
+      "label": "Series type",
+      "choices": [
+        "single_scan",
+        "single-axis_tilt_series",
+        "dual-axis_tilt_series"
+      ],
+      "default": "",
+      "opens": {	
+        "single_scan": null,
+        "single-axis_tilt_series":"single_tilt_series_settings",
+        "dual-axis_tilt_series":"single_tilt_series_settings"
+	  }
+    },
+
+
+    "single_tilt_series_settings": {
+      "type": "dropdown",
+      "label": "Tiltseries order",
+      "choices": [
+        "dose_symmetric",
+        "even_step_angle_scheme",
+		"arbitrary_angle_scheme"
+      ],
+	  "default": "arbitrary_angle_scheme",
+	  "opens": {
+		"dose_symmetric": "dose_symmetric",
+		"even_step_angle_scheme": "even_step_angle_scheme",
+		"arbitrary_angle_scheme": null
+	  }
+    },
+
+    "even_step_angle_scheme": {
+      "type": "button",
+      "label": "Even-step angle scheme",
+      "children": [
+        "start_tilt_angle",
+        "end_tilt_angle",
+		"step_tilt_angle"
+      ]
+    },
+
+    "dose_symmetric": {
+      "type": "button",
+      "label": "Dose symmetric angles scheme",
+      "children": [
+        "end_tilt_angle",
+		"step_tilt_angle",
+		"group_size",
+		"negative_then_positive"
+      ]
+    },
+
+    "start_tilt_angle": {
+      "type": "float",
+      "label": "start_tilt_angle",
+      "unit": "deg",
+      "default": -60
+    },
+
+    "end_tilt_angle": {
+      "type": "float",
+      "label": "end_tilt_angle",
+      "unit": "deg",
+      "default": 60
+    },
+
+    "step_tilt_angle": {
+      "type": "float",
+      "label": "step_tilt_angle",
+      "unit": "deg",
+      "default": 3
+    },
+
+    "group_size": {
+      "type": "integer",
+      "label": "group_size",
+      "default": 3
+    },
+
+    "negative_then_positive": {
+      "type": "boolean",
+      "label": "negative_then_positive",
+      "default": true
+    },
+
+	"number_of_additional_scans_per_tilt": {
+	  "type": "integer",
+	  "label": "Number additional scans per tilt",
+	  "default": 0
+	},
+
+    "STEM": {
+      "type": "button",
+      "label": "STEM settings",
+      "children": [
+        "main_scan",
+        "additional_scan"
+      ]
+    },
+
+    "4D-STEM": {
+      "type": "button",
+      "label": "4D-STEM settings",
+      "children": [
+        "main_scan",
+        "additional_scan"
+      ]
+    },
+
+    "main_scan": {
+      "type": "button",
+      "label": "Main scan",
+      "children": [
+        "scan_mode",
+        "beam",
+        "detectors",
+        "camera_length_mm",
+		"discriminator"
+      ]
+    },
+
+    "additional_scan": {
+      "type": "button",
+      "label": "Additional scan",
+      "children": [
+        "scan_mode",
+        "beam",
+        "detectors",
+        "camera_length_mm",
+		"discriminator"
+      ]
+    },
+
+
+    "EELS": {
+      "type": "button",
+      "label": "EELS settings",
+      "children": [
+        "EELS_system",
+        "energy_resolution_eV_per_px"
+      ]
+    },
+
+    "scan_mode": {
+      "type": "dropdown",
+      "label": "Scan mode",
+      "choices": [
+        "raster_scan",
+        "spiral_scan"
+      ],
+      "default": "raster_scan",
+      "opens": {
+        "raster_scan": "raster_scan",
+        "spiral_scan": "spiral_scan"
+      }
+    },
+
+    "camera_length_mm": {
+      "type": "float",
+      "label": "Camera length",
+      "unit": "mm",
+      "default": null
+    },
+
+    "discriminator": {
+      "type": "string",
+      "label": "Discriminator",
+      "default": ""
+    },
+
+
+    "raster_scan": {
+      "type": "button",
+      "label": "Raster scan settings",
+      "children": [
+        "Nx",
+        "Ny",
+        "step_size_nm",
+        "scan_time_s",
+        "trigger_delay_us"
+      ]
+    },
+
+    "Nx": {
+      "type": "integer",
+      "label": "Number of pixels in X",
+      "default": 1024
+    },
+
+    "Ny": {
+      "type": "integer",
+      "label": "Number of pixels in Y",
+      "default": 1024
+    },
+
+    "step_size_nm": {
+      "type": "float",
+      "label": "Step size",
+      "unit": "nm",
+      "default": null
+    },
+
+    "scan_time_s": {
+      "type": "float",
+      "label": "Scan time",
+      "unit": "s",
+      "default": 22
+    },
+
+    "trigger_delay_us": {
+      "type": "float",
+      "label": "Trigger delay",
+      "unit": "us",
+      "default": 0
+    },
+
+    "spiral_scan": {
+      "type": "button",
+      "label": "Spiral scan settings",
+      "children": [
+        "number_of_rings",
+        "scan_delay_us"
+      ]
+    },
+
+    "number_of_rings": {
+      "type": "integer",
+      "label": "Number of rings",
+      "default": null
+    },
+
+    "scan_delay_us": {
+      "type": "float",
+      "label": "Scan delay",
+      "unit": "us",
+      "default": null
+    },
+
+    "beam": {
+      "type": "button",
+      "label": "Beam settings",
+      "children": [
+        "energy_kv",
+        "convergence_angle_mrad",
+		"C2_aperture_um",
+        "current_pA",
+        "defocus_um"
+      ]
+    },
+
+    "energy_kv": {
+      "type": "float",
+      "label": "Beam energy",
+      "unit": "kV",
+      "default": null
+    },
+
+    "convergence_angle_mrad": {
+      "type": "float",
+      "label": "Convergence angle",
+      "unit": "mrad",
+      "default": null
+    },
+
+    "C2_aperture_um": {
+      "type": "float",
+      "label": "C2 aperture",
+      "unit": "um",
+      "default": null
+    },
+
+
+    "current_pA": {
+      "type": "float",
+      "label": "Beam current",
+      "unit": "pA",
+      "default": null
+    },
+
+ 
+    "defocus_um": {
+      "type": "float",
+      "label": "Defocus",
+      "unit": "um",
+      "default": 0
+    },
+
+    "detectors": {
+      "type": "button",
+      "label": "Detectors",
+      "children": [
+        "first_detector",
+        "second_detector"
+      ]
+    },
+
+    "first_detector": {
+      "type": "dropdown",
+      "label": "First detector",
+      "choices": [
+        "HAADF",
+        "ARINA",
+		"ABF",
+        "PANTHER",
+        "ELA-CEOS",
+        "OPAL"
+      ],
+      "default": "",
+      "opens": {
+        "HAADF": null,
+        "ARINA": "ARINA",
+        "ABF": null,
+        "PANTHER": null,
+        "ELA-CEOS": "ELA-CEOS",
+        "OPAL": null
+      }
+    },
+
+    "second_detector": {
+      "type": "dropdown",
+      "label": "Second detector",
+      "choices": [
+        "HAADF",
+        "PANTHER",
+        "OPAL",
+        "ARINA",
+        "ELA-CEOS"
+      ],
+      "default": "",
+      "opens": {
+        "HAADF": null,
+        "PANTHER": null,
+        "OPAL": null,
+        "ARINA": "ARINA",
+        "ELA-CEOS": "ELA-CEOS"
+      }
+    },
+
+
+    "ARINA": {
+      "type": "button",
+      "label": "ARINA detector settings",
+      "children": [
+        "ARINA_camera_size",
+        "ARINA_type",
+        "ARINA_position"
+      ]
+    },
+
+    "ARINA_camera_size": {
+      "type": "dropdown",
+      "label": "ARINA camera size",
+      "choices": [
+        "96x96",
+        "192x192"
+      ],
+      "default": "96x96"
+    },
+
+    "ARINA_type": {
+      "type": "dropdown",
+      "label": "ARINA type",
+      "choices": [
+        "commercial",
+        "prototype"
+      ],
+      "default": ""
+    },
+
+    "ARINA_position": {
+      "type": "dropdown",
+      "label": "ARINA position",
+      "choices": [
+        "left_to_column",
+        "right_to_column"
+      ],
+      "default": ""
+    },
+
+    "ELA-CEOS": {
+      "type": "button",
+      "label": "ELA-CEOS detector settings",
+      "children": [
+        "ELA_sizeX",
+        "ELA_sizeY",
+        "energy_filter",
+        "energy_filter_lower_eV",
+        "energy_filter_upper_eV"
+      ]
+    },
+
+    "ELA_sizeX": {
+      "type": "integer",
+      "label": "ELA size X",
+      "default": null
+    },
+
+    "ELA_sizeY": {
+      "type": "integer",
+      "label": "ELA size Y",
+      "default": null
+    },
+
+    "energy_filter": {
+      "type": "dropdown",
+      "label": "Energy filter",
+      "choices": [
+        "none",
+        "ZLP",
+        "range"
+      ],
+      "default": "none"
+    },
+
+    "energy_filter_lower_eV": {
+      "type": "float",
+      "label": "Energy filter lower limit",
+      "unit": "eV",
+      "default": null
+    },
+
+    "energy_filter_upper_eV": {
+      "type": "float",
+      "label": "Energy filter upper limit",
+      "unit": "eV",
+      "default": null
+    },
+
+    "EELS_system": {
+      "type": "string",
+      "label": "EELS system",
+      "default": "CEOS"
+    },
+
+    "energy_resolution_eV_per_px": {
+      "type": "float",
+      "label": "Energy resolution",
+      "unit": "eV/px",
+      "default": null
+    }
+  }
+}

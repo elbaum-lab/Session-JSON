@@ -1,0 +1,113 @@
+{
+  "sample": {
+    "grid_label": "",
+    "description": "T4 Phages",
+    "preparation_date": ""
+  },
+  "microscope_name": {
+    "selected": "F20",
+    "data": {}
+  },
+  "microscope_mode": {
+    "selected": "STEM",
+    "data": {
+      "STEM": {
+        "main_scan": {
+          "scan_mode": {
+            "selected": "raster_scan",
+            "data": {
+              "raster_scan": {
+                "scan_time_s": 15.0,
+                "step_size_nm": 2.1,
+                "Nx": 1024,
+                "Ny": 1024,
+                "trigger_delay_us": 0.0
+              }
+            }
+          },
+          "beam": {
+            "energy_kv": 200.0,
+            "convergence_angle_mrad": 0.8,
+            "C2_aperture_um": 30.0,
+            "current_pA": 10.0,
+            "defocus_um": 0.0
+          },
+          "detectors": {
+            "first_detector": {
+              "selected": "OPAL",
+              "data": {}
+            },
+            "second_detector": {
+              "selected": "HAADF",
+              "data": {}
+            }
+          },
+          "camera_length_mm": 1000.0,
+          "discriminator": ""
+        }
+      }
+    }
+  },
+  "series_type": {
+    "selected": "single-axis_tilt_series",
+    "data": {
+      "single_tilt_series_settings": {
+        "selected": "arbitrary_angle_scheme",
+        "data": {}
+      }
+    }
+  },
+  "folder_name": "Z:\\seifer\\SavvyscanData\\2022Dec25_phages\\2022Dec25phage_t3",
+  "master_name": "2022Dec25phage_t3",
+  "number_of_additional_scans_per_tilt": 0,
+  "acquisition_date": "2022-12-25",
+  "publication": "",
+  "remark": "",
+  "tilt_angles_deg": [
+    0,
+    -3,
+    -6,
+    -9,
+    3,
+    6,
+    9,
+    -12,
+    -15,
+    -18,
+    12,
+    15,
+    18,
+    -21,
+    -24,
+    -27,
+    21,
+    24,
+    27,
+    -30,
+    -33,
+    -36,
+    30,
+    33,
+    36,
+    -39,
+    -42,
+    -45,
+    39,
+    42,
+    45,
+    -48,
+    -51,
+    -54,
+    48,
+    51,
+    54,
+    -57,
+    -60,
+    57,
+    60
+  ],
+  "angles_duplicated": false,
+  "angle_repetition_factor": 1,
+  "schema_name": "microscopy_metadata_master",
+  "schema_version": "1.0"
+}
